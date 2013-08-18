@@ -17,13 +17,11 @@ Easily use MachForm forms on your WordPress site!
 For more information, check out the [plugin page on our website](http://www.laymance.com/products/wordpress-plugins/machform-shortcode/).
 
 Features include:
-
 * Support for javascript based forms
 * Support for iframe based forms
 
 
 **How to use the shortcode:**
-
 1. Click the "Code" option on your form inside of MachForm to see the embed codes.
 2. Make note of your form's "ID" and the "height".
 3. Use the shortcode to embed your form into your content using this format:  [machform type=("js" or "iframe") id=(ID #) height=(height #)]
