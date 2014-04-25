@@ -3,7 +3,7 @@ Contributors: rlaymance
 Donate Link: http://forms.laymance.com/view.php?id=16963
 Tags: MachForm, forms, shortcode, AppNitro
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 3.9
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,10 @@ If the "type" is not given, it will default to the javascript ("js") method.
 If the "height" is not given, it will default to a height of 800 pixels. But please give the height to ensure that your form appears correctly!
 
 The ID is a REQUIRED field.
+
+= I want the plugin to do XXX or have feature XXX, can you add it? =
+
+Most likely! Shoot us an email at support@laymance.com and tell us what you want added, we'll do our best!
 
 == Screenshots ==
 
