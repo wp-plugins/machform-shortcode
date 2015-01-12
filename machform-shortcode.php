@@ -3,7 +3,7 @@
 Plugin Name: Machform Shortcode
 Plugin URI: http://www.laymance.com/products/wordpress-plugins/machform-shortcode/
 Description: Creates a shortcode for inserting Machform forms into your posts or pages (only tested with MachForm 3.5+)
-Version: 1.0
+Version: 1.1
 Author: Laymance Technologies
 Author URI: http://www.laymance.com
 License: GPL2
@@ -60,34 +60,43 @@ function machform_shortcode( $atts ){
 	$atts['id'] = intval($atts['id']);
 	if ( $atts['id'] < 1 ) return '';
 	
+	// If no "type" is given, default to javascript embed
 	if ( $atts['type'] == '' ) $atts['type'] = 'js';
+	
+	// Support URL Parameters
+	$additional_parms = '';
+	$skip_keys = array('id','type','height');
+	
+	foreach( $atts as $attkey=>$attval ){
+    	$attkey = trim($attkey);
+    	
+    	// Skip known keys that are used for other functions
+    	if ( in_array($attkey, $skip_keys) ) continue;
+    	
+    	// Real URL parameter keys from Machforms will not have a space in them,
+    	// so skip over them... the keys should be in the form of element_1_1, 
+    	// element_1_2, etc.
+    	if ( strpos($attkey, ' ') !== false ) continue;
+    	
+    	$additional_parms .= '&' . $attkey . '=' . urlencode($attval);
+	}
+	
 	
 	$atts['height'] = intval($atts['height']);
 	if ( intval($atts['height']) < 1 ) $atts['height'] = 800;
 
 	if ( $atts['type'] == 'js' ){
-		ob_start();
-		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'machform-postmessage', $machform_domain . 'js/jquery.ba-postmessage.min.js' );
 		wp_enqueue_script( 'machform-loader', $machform_domain . 'js/machform_loader.js', false, false, true );
-		
-		?>
-<script type="text/javascript">
-var __machform_url = '<?php echo $machform_domain; ?>embed.php?id=<?php echo $atts['id']; ?>';
-var __machform_height = <?php echo $atts['height']; ?>;
-</script>
-<div id="mf_placeholder"></div>
-		<?php
-		$content = ob_get_clean();
-		
+
+        $content = '<script type="text/javascript">var __machform_url = \'' . $machform_domain . 'embed.php?id=' . $atts['id'] . $additional_parms . '\'; var __machform_height = ' . $atts['height'] . ';</script>';
+        $content .= '<div id="mf_placeholder"></div>';
+				
 		return $content;
 	} elseif ( $atts['type'] == 'iframe' ){
-		ob_start();
-		?>
-<iframe onload="javascript:parent.scrollTo(0,0);" height="<?php echo $atts['height']; ?>" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" src="<?php echo $machform_domain; ?>embed.php?id=<?php echo $atts['id']; ?>"><a href="<?php echo $machform_domain; ?>view.php?id=<?php echo $atts['id']; ?>">Click here to complete the form.</a></iframe>
-		<?php
-		$content = ob_get_clean();
+    	$content = '<iframe onload="javascript:parent.scrollTo(0,0);" height="' . $atts['height'] . '" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" ';
+    	$content .= 'src="' . $machform_domain . 'embed.php?id=' . $atts['id'] . $additional_parms . '"><a href="' . $machform_domain . 'view.php?id=' . $atts['id'] . $additional_parms . '">Click here to complete the form.</a></iframe>';
 		
 		return $content;
 	} else {
@@ -173,6 +182,16 @@ Using the short codes is easy!  The shortcode supports both the javascript metho
 <br />
 An example of a finished shortcode:  [machform type=js id=1593 height=703]<br />
 <br />
+<br />
+<strong>URL Parameters</strong><br />
+The plugin now supports URL Parameters.  You can read more about Machform's implementation of URL Parameters by visiting <a href="http://www.appnitro.com/doc-url-parameters" rel="nofollow">their website here</a>.<br />
+<br />
+To use URL parameters with your shortcodes, just add the additional parameters inside of the shortcode like the following example:<br />
+<br />
+[machform type=js id=1593 height=703 element_1_1="Field Text Here" element_1_2="Field Text Here"]<br />
+<br />
+<br />
+
 <strong>Step 4:</strong> You are done, save your content and your form should appear!<br />
 </div>
 	<?php

@@ -3,8 +3,8 @@ Contributors: rlaymance
 Donate Link: http://forms.laymance.com/view.php?id=16963
 Tags: MachForm, forms, shortcode, AppNitro
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,7 @@ Features include:
 
 * Support for javascript based forms
 * Support for iframe based forms
+* Support for URL Parameters
 
 Easy to use! This plugin isn't just for developers, no matter what your skill level you can use this plugin to easily add forms from your Machforms system to your website!
 
@@ -30,8 +31,18 @@ Easy to use! This plugin isn't just for developers, no matter what your skill le
 3. Use the shortcode to embed your form into your content using this format:  [machform type=("js" or "iframe") id=(ID #) height=(height #)]
 4. You are done, your form should show in your content now!
 
+**URL Parameters:**
+
+The plugin now supports URL parameters.  The parameters are easy to pass via the shortcode by simply including the parameter and value inside of the shortcode like the following example:
+
+[machform type=js id=1593 height=703 element_1_1="Field Text Here" element_1_2="Field Text Here"]
+
+For more information on using URL Parameters with Machform, please see their website [by clicking here](http://www.appnitro.com/doc-url-parameters).
+
 **Review or Rating**
-Don't forget to leave a review or a rating! Thank you for your support.
+
+Don't forget to leave a review or a rating, and also connect with us on social media! Thank you for your support.
+
 
 == Installation ==
 
