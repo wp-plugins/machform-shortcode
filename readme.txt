@@ -86,5 +86,8 @@ Most likely! Shoot us an email at support@laymance.com and tell us what you want
 
 == Changelog ==
 
+= 1.1 =
+* Added URL Parameters support
+
 = 1.0 =
 * Initial release
