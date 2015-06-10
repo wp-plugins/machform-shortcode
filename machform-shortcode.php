@@ -3,7 +3,7 @@
 Plugin Name: Machform Shortcode
 Plugin URI: http://www.laymance.com/products/wordpress-plugins/machform-shortcode/
 Description: Creates a shortcode for inserting Machform forms into your posts or pages (only tested with MachForm 3.5+)
-Version: 1.1
+Version: 1.2
 Author: Laymance Technologies
 Author URI: http://www.laymance.com
 License: GPL2
@@ -193,6 +193,19 @@ To use URL parameters with your shortcodes, just add the additional parameters i
 <br />
 
 <strong>Step 4:</strong> You are done, save your content and your form should appear!<br />
+<br />
+<br />
+
+<h2>Please leave a review!</h2>
+If you like this plugin and it has been helpful, could you leave a review?  Just goto <a href="https://wordpress.org/support/view/plugin-reviews/machform-shortcode" target="_blank">https://wordpress.org/support/view/plugin-reviews/machform-shortcode</a> and click on "Add your own review", it would be much appreciated!<br />
+<br />
+<br />
+This plugin was created by <a href="http://www.laymance.com" target="_blank">Laymance Technologies</a>, a small development firm located in East Tennesee. We offer web and graphics design, and WordPress Support... but we also specialize in custom development projects, custom WordPress templates and plugins, and so much more. Find us on the web at <a href="http://www.laymance.com" target="_blank">www.laymance.com</a>, by email at <a href="support@laymance.com">support@laymance.com</a> or call us at (865) 583-6360.<br />
+<br />
+<strong>Need a WordPress support contract, or just need help for one-time issues?</strong>  Visit <a href="http://www.blackbeltwp.com">BlackBeltWP.com</a> to chat real-time with a WordPress expert. We take our WordPress black belt skills and we round-house kick your issues!<br />
+<br />
+<br />
+    
 </div>
 	<?php
 	$content = ob_get_clean();

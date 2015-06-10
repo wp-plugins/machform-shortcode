@@ -1,10 +1,10 @@
 === MachForm Shortcode ===
-Contributors: rlaymance
+Contributors: laymance
 Donate Link: http://forms.laymance.com/view.php?id=16963
 Tags: MachForm, forms, shortcode, AppNitro
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.1
+Tested up to: 4.2.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,7 @@ For more information on using URL Parameters with Machform, please see their web
 
 Don't forget to leave a review or a rating, and also connect with us on social media! Thank you for your support.
 
+**IMPORTANT NOTE: Machforms is a 3rd party application sold by AppNitro.  Installing this plugin allows you to use a shortcode anywhere on your site to embed a form that is created in Machforms.  This plugin does not provide a form builder interface.**
 
 == Installation ==
 
@@ -55,7 +56,7 @@ Don't forget to leave a review or a rating, and also connect with us on social m
 
 = What version of MachForm does this plugin work with? =
 
-We have only tested the plugin with version 3.5 of MachForm.  If you have an older version, and the plugin does not work with it, please contact us and we'll add support for it (we would need a sample form and a copy of what the embed string looks like)!  You can contact us by visiting our website at [www.laymance.com](http://www.laymance.com).
+We have only tested the plugin with versions 3.5 and 4.x of MachForm.  If you have an older version, and the plugin does not work with it, please contact us and we'll add support for it (we would need a sample form and a copy of what the embed string looks like)!  You can contact us by visiting our website at [www.laymance.com](http://www.laymance.com).
 
 = I've found a bug, what can I do? =
 
@@ -85,6 +86,10 @@ Most likely! Shoot us an email at support@laymance.com and tell us what you want
 4. Sample usage in a new post.
 
 == Changelog ==
+
+= 1.2 =
+* Added a note to make it clear that this plugin doesn't provide a form builder interface, it only allows the 3rd Party app MachForms to be used on a site easily.
+* Added text asking for the user to leave a review for the plugin on the WordPress Plugin Directory - this text is on the settings page, unobtrusive (we hate plugins that plaster admin banners for that type of stuff).
 
 = 1.1 =
 * Added URL Parameters support
